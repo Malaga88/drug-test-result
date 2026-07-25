@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    img {
-      max-width: 90vw;
-      max-height: 90vh;
-      object-fit: contain;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Image</title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+</style>
 </head>
 <body>
-  <img src="../abilux_wears/111.jpeg" alt="Centered image" />
+  <img id="myImage" src="testdrug.png" alt="Centered image" />
+
+  <script>
+    window.addEventListener('load', function() {
+      const img = document.getElementById('myImage');
+      const link = document.createElement('a');
+      link.href = img.src;
+      link.download = 'image.jpeg';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
 </body>
 </html>
